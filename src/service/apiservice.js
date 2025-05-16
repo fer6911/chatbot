@@ -28,7 +28,7 @@ function EnviarMensajeWhastpapp(texto, number) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer EAAKHZBxoay4ABOwORAZAOHCwxyRCDJDJHIbiIHgRqhMUwKEsJOncRlXAeUg8s1r1KOjEN5yUZBwzbXpMIOWZAZCJJlnnKiRG9eaZAetG0zwm5AklSAlNmYJNZB1lGo2dJCi33jtG8TehlHYOsgPnD8p74VRAEekGUtKDTVCyGoToSzFwMJum2WDKEaGQOUPAiyByPKgvo94uJNfmsiCxgZCdJfbHU9xaEzz3JH6cEH55OoYZD"
+      Authorization: "Bearer EAAKHZBxoay4ABO9l2fWrfyAFgTSrhXMrS4qGmCgkKko4nRwoJA2DX8TvxhAnZBhpzUSLQkpUlS4zVVajqyfCVqw5P9mZCYLpkfTL0ZAed99BeJxWXFnLlaPPXFUymNsFwD0TiG809ZANBzYsEJX0euk8cLMZCwlrvoCDWOU0vfNBQZC6Y4exVZCdDHFu7q2vdWjVyhX9V7MZAAPFT1o29pf7G1ubLbOUBSDlmcMslkkZCl4HkZD"
     }
   };
 
@@ -46,7 +46,7 @@ function EnviarMensajeWhastpapp(texto, number) {
     console.error("Error en la petición HTTPS:", e);
   });
 
-  req.write(data);  // Aquí enviamos el body JSON correctamente
+  req.write(data);
   req.end();
 }
 
