@@ -29,7 +29,7 @@ const verificar = (req, res) => {
 
 const recibir = (req, res) => {
   console.log("=== Body recibido ===");
-  console.log(JSON.stringify(req.body, null, 2));
+  // console.log(JSON.stringify(req.body, null, 2));
   try {
     const body = req.body;
     if (body.object === "page") {
