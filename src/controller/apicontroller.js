@@ -22,7 +22,7 @@ const verificar = (req, res) => {
 
 const recibir = (req, res) => {
     try{
-        var entry = (req);
+        var entry = (req.entry);
 
         console.log(entry);
         
