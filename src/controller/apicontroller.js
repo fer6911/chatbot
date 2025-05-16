@@ -22,15 +22,10 @@ const verificar = (req, res) => {
 
 const recibir = (req, res) => {
     try{
-        var entry = (req.body["entry"])[0];
-        var changes = (entry["changes"])[0];
-        var value = changes["value"];
-        var objetoMensaje = value["messages"];
+        var entry = (req);
 
         console.log(entry);
-        console.log(changes);
-        console.log(value);
-        console.log(objetoMensaje);
+        
         
         res.send("EVENT_RECEIVED");
     }catch(e){
