@@ -29,7 +29,7 @@ function EnviarMensajeWhastpapp(texto,number){
         body : data,
         headers : {
             "Content-Type" : "application/json",
-            Authorization :"EAAKHZBxoay4ABOZCJOZBlTEsj0rcsrZBPkUnK5D44yq4b0qVPZCrA14kwAZCA7jrlN2yaFB1ZAtg29lG8MtTMBdn5Mor7nB7KjzbmAb0ZBsLMnxlX9Q0gmgc69I5QRkosxaOQ7ZAGp2WEqfCZCPVEKWxspPn5MABBGX8qTyYpvanQ9e3BN9KGQ4PcV8FPACkAXTxfLrhlUE0XsS9mOn4uWYPjX7zMBreL7ejD8PkoyHsIkzhoZD"
+            Authorization :"EAAKHZBxoay4ABOwORAZAOHCwxyRCDJDJHIbiIHgRqhMUwKEsJOncRlXAeUg8s1r1KOjEN5yUZBwzbXpMIOWZAZCJJlnnKiRG9eaZAetG0zwm5AklSAlNmYJNZB1lGo2dJCi33jtG8TehlHYOsgPnD8p74VRAEekGUtKDTVCyGoToSzFwMJum2WDKEaGQOUPAiyByPKgvo94uJNfmsiCxgZCdJfbHU9xaEzz3JH6cEH55OoYZD"
         }
     };
 
