@@ -2,9 +2,8 @@ const verificar = (req, res) => {
 
   try {
     const tokenmeta = "TOKENAPIMETA"
-
-    const token = req.query['hub.verify_token'];
-    const challenge = req.query['hub.challenge'];
+    const token = req.query["hub.verify_token2"];
+    const challenge = req.query["hub.challenge"];
 
     console.log(`Token recibido: ${token}, Challenge: ${challenge}`); 
 
