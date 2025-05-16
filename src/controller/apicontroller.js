@@ -2,6 +2,7 @@ const verificar = (req, res) => {
 
   try {
     const tokenmeta = "TOKENAPIMETA"
+
     const token = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
 
@@ -13,6 +14,7 @@ const verificar = (req, res) => {
     }
     console.error("Token inválido o falta challenge");
     return res.sendStatus(403);
+    console.log(req);
 
   } catch (error) {
     res.status(400).send()
