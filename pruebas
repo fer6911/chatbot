@@ -1,0 +1,38 @@
+ "object" : "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "2547103698964674",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15551881981",
+              "phone_number_id": "663678286826514"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Olshop"
+                },
+                "wa_id": "573225532461"
+              }
+            ],
+            "messages": [
+              {
+                "from": "573225532461",
+                "id": "wamid.HBgMNTczMjI1NTMyNDYxFQIAEhggRjkwODYzMjU4MDQ5Q0FBMEZERUFDNTlBNzVDMzEzQUQA",
+                "timestamp": "1747428796",
+                "text": {
+                  "body": "Hola cómo está loco"
+                },
+                "type": "text"
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+

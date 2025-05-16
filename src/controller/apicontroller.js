@@ -29,13 +29,50 @@ const verificar = (req, res) => {
 
 const recibir = (req, res) => {
   console.log("=== Body recibido ===");
-  console.log(JSON.stringify(req.body, null, 2));  // Para ver bien el JSON
+  console.log(JSON.stringify(req.body, null, 2));
   try {
     const body = req.body;
     if (body.object === "page") {
-      body.entry.forEach(entry => {
-        console.log("Evento recibido:", JSON.stringify(entry, null, 2));
-      });
+      const body = req.body;
+
+      // Primero accedemos al primer elemento de entry, si existe
+      const entry = Array.isArray(body.entry) && body.entry.length > 0 ? body.entry[0] : null;
+
+      if (!entry) {
+        console.log("No hay entries en el body");
+        return; // O manejar error según tu lógica
+      }
+
+      // Luego accedemos al primer changes dentro de entry
+      const changes = Array.isArray(entry.changes) && entry.changes.length > 0 ? entry.changes[0] : null;
+
+      if (!changes) {
+        console.log("No hay changes dentro de entry");
+        return;
+      }
+
+      // Ahora sacamos value
+      const value = changes.value || null;
+
+      if (!value) {
+        console.log("No hay value dentro de changes");
+        return;
+      }
+
+      // Finalmente sacamos messages
+      const objetoMensaje = Array.isArray(value.messages) && value.messages.length > 0 ? value.messages[0] : null;
+
+      if (!objetoMensaje) {
+        console.log("No hay mensajes dentro de value");
+        return;
+      }
+
+      // Ya puedes extraer texto y numero
+      const texto = objetoMensaje.text?.body || "";
+      const numero = objetoMensaje.from || "";
+
+      console.log("Texto recibido:", texto);
+      console.log("Número remitente:", numero);
       res.status(200).send("EVENT_RECEIVED");
     } else {
       res.sendStatus(404);
