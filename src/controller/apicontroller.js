@@ -31,14 +31,8 @@ const recibir = (req, res) => {
   try {
     const body = req.body;
 
-    if (body) {
-      console.log(body);
-      
-
-      return res.status(200).send("EVENT_RECEIVED");
-    } else {
-      return res.sendStatus(404);
-    }
+      console.log("body:-----"+body);
+   
   } catch (e) {
     console.error("Error al recibir webhook:", e);
     res.status(500).send();
