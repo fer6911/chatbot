@@ -2,19 +2,18 @@ const verificar = (req, res) => {
 
   try {
     const tokenmeta = "TOKENAPIMETA"
+
     const token = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
 
-    console.log("Token recibido:", token);
-    console.log("Challenge recibido:", challenge);
+    console.log(`Token recibido: ${token}, Challenge: ${challenge}`); 
 
     if (token && token === VERIFY_TOKEN) {
       console.log("Webhook verificado!");
-      res.status(200).send(challenge);
-    } else {
-      console.error("Token inválido");
-      res.sendStatus(403);
+      return res.status(200).send(challenge);
     }
+    console.error("Token inválido o falta challenge");
+    return res.sendStatus(403);
     console.log(req);
 
   } catch (error) {
