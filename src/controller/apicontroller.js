@@ -1,7 +1,7 @@
 const verificar = (req, res) => {
 
   try {
-    const tokenandercode = "TOKENMETAAPI";
+    const tokenandercode = "ANDERCODENODEJSAPIMETA";
     const token = req.query["hub.verify_token"];
     const challenge = req.query["hub.challenge"];
 
