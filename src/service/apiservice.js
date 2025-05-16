@@ -28,7 +28,7 @@ function EnviarMensajeWhastpapp(texto, number) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "EAAKHZBxoay4ABOwORAZAOHCwxyRCDJDJHIbiIHgRqhMUwKEsJOncRlXAeUg8s1r1KOjEN5yUZBwzbXpMIOWZAZCJJlnnKiRG9eaZAetG0zwm5AklSAlNmYJNZB1lGo2dJCi33jtG8TehlHYOsgPnD8p74VRAEekGUtKDTVCyGoToSzFwMJum2WDKEaGQOUPAiyByPKgvo94uJNfmsiCxgZCdJfbHU9xaEzz3JH6cEH55OoYZD"
+      Authorization: "Bearer EAAKHZBxoay4ABOwORAZAOHCwxyRCDJDJHIbiIHgRqhMUwKEsJOncRlXAeUg8s1r1KOjEN5yUZBwzbXpMIOWZAZCJJlnnKiRG9eaZAetG0zwm5AklSAlNmYJNZB1lGo2dJCi33jtG8TehlHYOsgPnD8p74VRAEekGUtKDTVCyGoToSzFwMJum2WDKEaGQOUPAiyByPKgvo94uJNfmsiCxgZCdJfbHU9xaEzz3JH6cEH55OoYZD"
     }
   };
 
