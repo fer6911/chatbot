@@ -18,7 +18,7 @@ const verificar = (req, res) => {
 }
 
 const recibir = (req, res) => {
-  res.send("Recibido");
+  res.send("EVENT_RECEIVED");
   console.log("Recibido");
 };
 
