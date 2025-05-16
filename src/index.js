@@ -1,11 +1,13 @@
-const express = require('express');
+const express = require("express");
+const apiruta = require("./routes/ruta");
+
 const app = express();
-const router = require('./routes/ruta');
+
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
-app.use('/api/', router);
 
-const PORT = process.env.PORT || 10000
+app.use("/api",apiruta);
 
 
 app.listen(PORT,() => {
