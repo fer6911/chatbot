@@ -4,8 +4,9 @@ function EnviarMensajeWhastpapp(texto,number){
 
     texto = texto.toLowerCase();
 
+     let data;
     if (texto.includes("hola")){
-        var data = JSON.stringify({
+         data = JSON.stringify({
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -16,6 +17,10 @@ function EnviarMensajeWhastpapp(texto,number){
             }
         });
     }
+    else {
+    console.log("No hay un mensaje definido para este texto.");
+    return;
+  }
 
     const options = {
         host : "graph.facebook.com",

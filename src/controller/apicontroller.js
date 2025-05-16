@@ -73,10 +73,10 @@ const recibir = (req, res) => {
 
     console.log("Texto recibido:", texto);
     console.log("Número remitente:", numero);
+    
+    enviarmensaje.EnviarMensajeWhastpapp(texto,numero);
+    
     res.status(200).send("EVENT_RECEIVED");
-
-     enviarmensaje.EnviarMensajeWhastpapp(texto,numero);
-
   } catch (e) {
     console.error("Error:", e);
     res.status(500).send();
