@@ -7,7 +7,7 @@ const verificar = (req, res) => {
     console.log("Datos recibidos:", { token, challenge });
 
     if (challenge && token && token === VERIFY_TOKEN) {
-      console.log("-Webhook verificado correctamente-");
+      console.log("-Webhook verificado correctamente---");
       return res.status(200).send(challenge);
     }
 
