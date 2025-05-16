@@ -29,9 +29,9 @@ const verificar = (req, res) => {
 
 const recibir = (req, res) => {
   try {
-    const body = req.body;
+    const entry = req.entry;
 
-      console.log("body:-----"+body);
+      console.log("entry:-----"+entry);
    
   } catch (e) {
     console.error("Error al recibir webhook:", e);
