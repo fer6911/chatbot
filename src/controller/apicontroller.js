@@ -1,19 +1,22 @@
 const verificar = (req, res) => {
 
-    try{
-        var tokenandercode = "ANDERCODENODEJSAPIMETA";
-        var token = req.query["hub.verify_token"];
-        var challenge = req.query["hub.challenge"];
+  try {
+    var tokenandercode = "ANDERCODENODEJSAPIMETA";
+    var token = req.query['hub.verify_token'];
+    var challenge = req.query['hub.challenge'];
 
-        if (challenge != null && token != null && token == tokenandercode){
-            res.send(challenge);
-        }else{
-            res.status(400).send();
-        }
-
-    }catch(e){
-        res.status(400).send();
+    console.log("Datos recibidos:", { token, challenge }); 
+    if (challenge != null && token != null && token == tokenandercode) {
+      console.log("Webhook verificado correctamente");
+      return res.status(200).send(challenge);
+    } else {
+      console.error("Fallo en verificación:", { tokenRecibido: token, tokenEsperado: tokenMeta });
+      return res.status(400).send("Token inválido o falta challenge");
     }
+
+  } catch (e) {
+    res.status(400).send();
+  }
 
 }
 
