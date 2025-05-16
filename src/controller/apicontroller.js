@@ -28,13 +28,20 @@ const verificar = (req, res) => {
 };
 
 const recibir = (req, res) => {
+  console.log("=== Body recibido ===");
+  console.log(JSON.stringify(req.body, null, 2));  // Para ver bien el JSON
   try {
-    const entry = (req.body["entry"])[0];
-
-      console.log("entry:-----"+entry);
-   
+    const body = req.body;
+    if (body.object === "page") {
+      body.entry.forEach(entry => {
+        console.log("Evento recibido:", JSON.stringify(entry, null, 2));
+      });
+      res.status(200).send("EVENT_RECEIVED");
+    } else {
+      res.sendStatus(404);
+    }
   } catch (e) {
-    console.error("Error al recibir webhook:", e);
+    console.error("Error:", e);
     res.status(500).send();
   }
 };
