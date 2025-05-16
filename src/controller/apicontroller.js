@@ -7,13 +7,13 @@ const verificar = (req, res) => {
 
    console.log("Datos recibidos:", { token, challenge }); 
 
-    if (challenge && token && token === tokenandercode) {
-        console.log("Webhook verificado correctamente");
-        return res.status(200).send(challenge);
-    }
-    
-    console.error("Fallo en verificación:", { tokenRecibido: token, tokenEsperado: tokenandercode });
-    return res.status(400).send("Token inválido o falta challenge");
+    if (challenge != null && token != null && token == tokenandercode){
+      console.error("verificación:", { tokenRecibido: token, tokenEsperado: tokenandercode });
+            res.send(challenge);
+        }else{
+          return res.status(400).send("Token inválido o falta challenge");
+            res.status(400).send();
+        }
   } catch (e) {
     res.status(400).send();
   }
