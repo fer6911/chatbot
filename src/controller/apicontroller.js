@@ -21,10 +21,23 @@ const verificar = (req, res) => {
 }
 
 const recibir = (req, res) => {
-  res.send("EVENT_RECEIVED");
-  console.log(req);
-  console.log("Recibido");
-};
+    try{
+        var entry = (req.body["entry"])[0];
+        var changes = (entry["changes"])[0];
+        var value = changes["value"];
+        var objetoMensaje = value["messages"];
+
+        console.log(entry);
+        console.log(changes);
+        console.log(value);
+        console.log(objetoMensaje);
+        
+        res.send("EVENT_RECEIVED");
+    }catch(e){
+        console.log(e);
+        res.send("EVENT_RECEIVED");
+    }
+}
 
 module.exports = {
   verificar,
