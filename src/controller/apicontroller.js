@@ -1,39 +1,50 @@
-const verificar = (req, res) => {
+const config = {
+  verifyToken: "ANDERCODENODEJSAPIMETA"  // Debes poner el token que pusiste en Facebook
+};
 
+const verificar = (req, res) => {
   try {
     let mode = req.query["hub.mode"];
     let token = req.query["hub.verify_token"];
     let challenge = req.query["hub.challenge"];
 
-    console.log("Datos recibidos:", { token, challenge });
+    console.log("Datos recibidos:", { mode, token, challenge });
+
     if (mode && token) {
       if (mode === "subscribe" && token === config.verifyToken) {
         console.log("Webhook verificado correctamente");
-        res.status(200).send(challenge);
+        return res.status(200).send(challenge);
       } else {
-        console.error("Fallo en verificación:", { tokenRecibido: token, tokenEsperado: tokenandercode });
-        res.sendStatus(403);
+        console.error("Fallo en verificación:", { tokenRecibido: token, tokenEsperado: config.verifyToken });
+        return res.sendStatus(403);
       }
+    } else {
+      return res.sendStatus(400);
     }
   } catch (e) {
-    res.status(400).send();
+    console.error("Error en la verificación:", e);
+    res.status(500).send();
   }
-
-}
+};
 
 const recibir = (req, res) => {
   try {
-    var entry = (req.entry);
+    const body = req.body;
 
-    console.log(entry);
+    if (body.object === "page") {
+      body.entry.forEach(entry => {
+        console.log("Evento recibido:", entry);
+      });
 
-
-    res.send("EVENT_RECEIVED 111");
+      return res.status(200).send("EVENT_RECEIVED");
+    } else {
+      return res.sendStatus(404);
+    }
   } catch (e) {
-    console.log(e);
-    res.send("EVENT_RECEIVED");
+    console.error("Error al recibir webhook:", e);
+    res.status(500).send();
   }
-}
+};
 
 module.exports = {
   verificar,

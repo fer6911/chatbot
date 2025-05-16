@@ -3,7 +3,6 @@ const router = express.Router();
 const apicontroller = require('../controller/apicontroller');
 
 router
-  .get("/messaging-webhook", apicontroller.verificar)
-  .post("/webhook", apicontroller.recibir);
-
+  .get("/webhook", apicontroller.verificar) 
+  .post("/webhook", apicontroller.recibir); 
 module.exports = router;
