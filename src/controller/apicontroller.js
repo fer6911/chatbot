@@ -1,19 +1,22 @@
 const verificar = (req, res) => {
 
-    try{
-        let tokenmeta = "TOKENMETAAPI";
-        let token = req.query["hub.verify_token"];
-        let challenge = req.query["hub.challenge"];
+  try {
+    const tokenMeta = "TOKENMETAAPI";
+    const token = req.query["hub.verify_token"];
+    const challenge = req.query["hub.challenge"];
 
-        if (challenge != null && token != null && token == tokenmeta){
-            res.send(challenge);
-        }else{
-            res.status(400).send();
-        }
+    console.log("Datos recibidos:", { token, challenge }); 
 
-    }catch(e){
-        res.status(400).send();
+    if (challenge && token && token === tokenMeta) {
+      console.log("Webhook verificado correctamente");
+      return res.status(200).send(challenge);
     }
+
+    console.error("Fallo en verificación:", { tokenRecibido: token, tokenEsperado: tokenMeta });
+    return res.status(400).send("Token inválido o falta challenge");
+  } catch (e) {
+    res.status(400).send();
+  }
 
 }
 
