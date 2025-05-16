@@ -1,14 +1,15 @@
-const express = require("express")
-const apiruta = require("./routes/ruta")
+const express = require('express');
+const app = express();
+const router = require('./routes/ruta');
 
-
-const app = express()
+app.use(express.json());
+app.use('/api', router);
 
 const PORT = process.env.PORT || 10000
 
-app.use(express.json())
-app.use("/api",apiruta)
 
 app.listen(PORT,() => {
   console.log("Chat BOt puerto: "+ PORT);
 })
+
+
