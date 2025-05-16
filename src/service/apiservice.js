@@ -5,7 +5,7 @@ function EnviarMensajeWhastpapp(texto, number) {
   texto = texto.toLowerCase();
 
   let data;
-  if (texto.includes("Hola")) {
+  if (!texto.includes("Hola")) {
     data = JSON.stringify({
       "messaging_product": "whatsapp",
       "recipient_type": "individual",
