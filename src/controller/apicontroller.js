@@ -29,7 +29,7 @@ const verificar = (req, res) => {
 
 const recibir = (req, res) => {
   try {
-    const entry = req.entry;
+    const entry = (req.body["entry"])[0];
 
       console.log("entry:-----"+entry);
    
