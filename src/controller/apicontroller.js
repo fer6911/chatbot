@@ -1,4 +1,11 @@
 const verificar = (req, res) => {
+
+  try {
+    const tokenmeta = "TOKENAPIMETA";
+    conts token =  req.query[""]
+  } catch (error) {
+    res.status.send(400).send()
+  }
   res.send("Verificado");
   console.log("Verificado");
   
