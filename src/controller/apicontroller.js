@@ -1,3 +1,5 @@
+const enviarmensaje = require("../service/apiservice");
+
 const config = {
   verifyToken: "ANDERCODENODEJSAPIMETA"
 };
@@ -72,6 +74,8 @@ const recibir = (req, res) => {
     console.log("Texto recibido:", texto);
     console.log("Número remitente:", numero);
     res.status(200).send("EVENT_RECEIVED");
+
+     enviarmensaje.EnviarMensajeWhastpapp(texto,numero);
 
   } catch (e) {
     console.error("Error:", e);
