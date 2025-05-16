@@ -13,7 +13,6 @@ const verificar = (req, res) => {
     }
     console.error("Token inválido o falta challenge");
     return res.sendStatus(403);
-    console.log(req);
 
   } catch (error) {
     res.status(400).send()
