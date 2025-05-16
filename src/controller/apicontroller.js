@@ -1,5 +1,5 @@
 const config = {
-  verifyToken: "ANDERCODENODEJSAPIMETA"  // Debes poner el token que pusiste en Facebook
+  verifyToken: "ANDERCODENODEJSAPIMETA"
 };
 
 const verificar = (req, res) => {
@@ -31,10 +31,9 @@ const recibir = (req, res) => {
   try {
     const body = req.body;
 
-    if (body.object === "page") {
-      body.entry.forEach(entry => {
-        console.log("Evento recibido:", entry);
-      });
+    if (body) {
+      console.log(body);
+      
 
       return res.status(200).send("EVENT_RECEIVED");
     } else {
